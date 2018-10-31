@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: MKDemoMat4View3
+  m_Shader: {fileID: 4800000, guid: 80927bda8e1b76a459ea4a08c0534070, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+    - first:
+        name: SliceGuide
+      second:
+        m_Texture: {fileID: 2800000, guid: 4570d47ffb16b3144b80a72ad4752bd2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _BurnRamp
+      second:
+        m_Texture: {fileID: 2800000, guid: cedc8d4f6919e864a99784077eba2904, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _MKGlowTex
+      second:
+        m_Texture: {fileID: 2800000, guid: 6e4e6ecc78701fd43a948eb42241ab36, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _MainTex
+      second:
+        m_Texture: {fileID: 2800000, guid: f30e4af5fb1246641a1f92faabd57d2f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _SliceGuide
+      second:
+        m_Texture: {fileID: 2800000, guid: 4570d47ffb16b3144b80a72ad4752bd2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - first:
+        name: _BurnSize
+      second: 0
+    - first:
+        name: _MKGlowOffSet
+      second: 0
+    - first:
+        name: _MKGlowPower
+      second: 1
+    - first:
+        name: _MKGlowTexStrength
+      second: 10
+    - first:
+        name: _SliceAmount
+      second: 0
+    m_Colors:
+    - first:
+        name: _Color
+      second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
+        name: _MKGlowColor
+      second: {r: 1, g: 0, b: 0, a: 1}
+    - first:
+        name: _MKGlowTexColor
+      second: {r: 0.94482744, g: 1, b: 0, a: 1}
