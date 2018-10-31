@@ -72,7 +72,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1506840027302598}
   m_LocalRotation: {x: 0.7071068, y: -0, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: 0.0026000184, y: 0, z: -2.9802286e-10}
+  m_LocalPosition: {x: 0.0082, y: 0, z: -0}
   m_LocalScale: {x: 0.024741948, y: 0.024741938, z: 0.024741938}
   m_Children: []
   m_Father: {fileID: 4656740239620256}
@@ -209,10 +209,11 @@ MonoBehaviour:
   startingHp: 100
   health: 100
   value: 10
-  ui: {fileID: 0}
+  specialVal: 0.1
   shatterdObject: {fileID: 1276462070355198, guid: 0914bfa87c9c38742aeb286ea3e51084,
     type: 2}
   shake: {fileID: 0}
+  ui: {fileID: 0}
   projectile: {fileID: 114008897390832786, guid: 5f6a7a9bb55ebaf4398879b53c352fe1,
     type: 2}
   speed: 10
@@ -365,7 +366,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 20
+      scalar: 0
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -481,7 +482,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 400
+      scalar: 40
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -856,11 +857,11 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 5
     enabled: 1
-    type: 8
+    type: 6
     angle: 20
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
-    radiusThickness: 0
+    radiusThickness: 1
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
@@ -887,7 +888,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 0.0001
       mode: 0
       spread: 0
       speed:
@@ -4818,7 +4819,7 @@ ParticleSystemRenderer:
   m_EnableGPUInstancing: 0
   m_ApplyActiveColorSpace: 0
   m_VertexStreams: 0001030405
-  m_Mesh: {fileID: 4300000, guid: ca30ec0effeef2242aaa874b46fff724, type: 3}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}

@@ -7,10 +7,6 @@ public class KillPlayer : MonoBehaviour {
 	public Movement playerControl;
 	public GameObject controls;
 	public GameObject deathParticles;
-	void Start()
-	{
-
-	}
 
 	void OnCollisionEnter(Collision other)
 	{

@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Movement : LivingEntity 
 {
+	[Header("PlayerControl")]
 	public float movementSpeed = 10f;
 	public float tilt = 10f;
 	Rigidbody rb;
 	Transform myT;
-
+	public bool dead;
 	public bool canDie = true;
 
+	[Header("WeaponControl")]
 	//temp for now put in own script
 	public Transform[] projectileSpawn;
 	public GameObject projectile;
@@ -19,12 +21,9 @@ public class Movement : LivingEntity
 	public bool isFiring;
 	//
 
-	public bool dead;
-
+	[Header("External Objects")]
 	public GameObject targetObj;
-
 	public Camera viewCam;
-
 	public AudioSource audioS;
 
 	void Start () 

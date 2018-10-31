@@ -5,19 +5,23 @@ using UnityEngine;
 public class LivingEntity : MonoBehaviour {
 	public float startingHp = 100;
 	public float health;
-	protected bool dead;
 
 	public int value;
-
-	public GameObject ui;
-
-	public event System.Action OnDeath;
+	public float specialVal; 
 	public GameObject shatterdObject;
+	protected bool dead;
+	public bool doTheShake;
+	public event System.Action OnDeath;
 
+
+	[Header("External Objects")]
 	public CamShake shake;
+	private GameObject player;
+	public GameObject ui;
 
 	void Awake()
 	{
+		player = GameObject.FindGameObjectWithTag ("Player");
 		ui = GameObject.FindGameObjectWithTag ("ScreenCanvas");
 		shake = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<CamShake>();
 	}
@@ -30,6 +34,9 @@ public class LivingEntity : MonoBehaviour {
 	{
 		health -= damage;
 		if (health <= 0 && !dead) {
+			if (!player.GetComponent<Special>().cooldown) {
+				ui.GetComponent<UI> ().sliderVal += specialVal;
+			}
 			Die ();
 		}
 	}
@@ -39,7 +46,9 @@ public class LivingEntity : MonoBehaviour {
 	
 		ui.GetComponent<UI> ().score += value;
 		Instantiate (shatterdObject, this.gameObject.transform.position, this.gameObject.transform.rotation);
-		shake.shouldShake = true;
+		if (doTheShake) {
+			shake.shouldShake = true;
+		}
 		if (OnDeath != null) {
 			OnDeath();
 		}

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Waves : MonoBehaviour {
 
+	[Header("WaveControl")]
 	public Wave[] waves;
 	public Enemy enemy;
 	Wave currentWave;
@@ -12,14 +13,13 @@ public class Waves : MonoBehaviour {
 	int enemiesRemainingAlive;
 	int enemiesRemaningToSpawn;
 	float nextSpawnTime;
+	public bool spawnWave;
+	public float spawnDist;
 
+	[Header("Other Objects")]
 	public GameObject ui;
-
 	public GameObject player;
 
-	public bool spawnWave;
-
-	public float spawnDist;
 
 	void Start () {
 
