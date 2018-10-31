@@ -15,6 +15,7 @@ public class KillPlayer : MonoBehaviour {
 				Instantiate (deathParticles, controls.transform.position, deathParticles.transform.rotation);
 				playerControl.shake.shouldShake = true;
 				playerControl.dead = true;
+				playerControl.deathSound.Play ();
 				controls.SetActive(false);
 			}
 		}

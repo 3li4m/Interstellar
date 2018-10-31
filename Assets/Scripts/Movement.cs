@@ -21,10 +21,13 @@ public class Movement : LivingEntity
 	public bool isFiring;
 	//
 
+	[Header("Audio")]
+	public AudioSource audioS;
+	public AudioSource deathSound;
+
 	[Header("External Objects")]
 	public GameObject targetObj;
 	public Camera viewCam;
-	public AudioSource audioS;
 
 	void Start () 
 	{
