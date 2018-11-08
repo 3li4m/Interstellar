@@ -25,8 +25,10 @@ public class Special : MonoBehaviour {
 	public float valOverTime;
 	public bool cooldown = false; 
 
-
-
+	public Color curColor;
+	public Color powerUpColor;
+	public Color coolDownColor;
+	public Material playerColor;
 
 	void Start () {
 		speed = player.gameObject.GetComponent<Movement> ().movementSpeed;
@@ -46,16 +48,27 @@ public class Special : MonoBehaviour {
 			}
 		}
 
+
+
 		if (cooldownTime > 0) {
 			cooldownTime -= Time.deltaTime;
 			cooldown = true;
+			playerColor.color = Color.Lerp (curColor, coolDownColor, Mathf.PingPong(Time.time * 2,1f));
+			playerColor.SetColor ("_EmissionColor", playerColor.color);
 		}
 
+		//
+	
+
 		if (cooldownTime <= 0) {
+			playerColor.color = Color.Lerp (curColor, powerUpColor, ui.GetComponent<UI> ().sliderVal * Time.deltaTime);
+			playerColor.SetColor ("_EmissionColor", playerColor.color);
 			cooldown = false;
 			cdTxt.SetActive (false);
 			ui.GetComponent<UI> ().sliderVal += valOverTime * Time.deltaTime;
 		}
+
+
 	}
 	void Teleport()
 	{

@@ -14,6 +14,8 @@ public class UI : MonoBehaviour
 
 	public Text cdTxt;
 
+	public GameObject UireadyParticle;
+
 	void Start () {
 		score = 0;
 		sliderVal = 0;
@@ -24,5 +26,10 @@ public class UI : MonoBehaviour
 		waveTxt.text = "" + wave.ToString ();
 		slider.value = sliderVal;
 		cdTxt.text = "COOLING DOWN";
+		if (slider.value == 100) {
+			UireadyParticle.SetActive (true);
+		} else {
+			UireadyParticle.SetActive (false);
+		}
 	}
 }
