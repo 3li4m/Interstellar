@@ -231,6 +231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotRight: 1
   rotSpeed: 4
+  vertical: 1
 --- !u!114 &114618768860473472
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -298,6 +299,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotRight: 0
   rotSpeed: 4
+  vertical: 1
 --- !u!114 &114858478664647016
 MonoBehaviour:
   m_ObjectHideFlags: 1
