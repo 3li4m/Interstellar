@@ -20561,7 +20561,7 @@ Transform:
   m_GameObject: {fileID: 967981745}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.362, y: 1, z: 2.9723}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 787035522}
   m_Father: {fileID: 0}
@@ -49887,6 +49887,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114456735426742654, guid: a584b1482246b2642a3d5a6225787d96,
         type: 2}
+<<<<<<< HEAD:Assets/Scenes/Map1.unity
       propertyPath: playerControl
       value: 
       objectReference: {fileID: 967981746}
@@ -49899,6 +49900,41 @@ Prefab:
     - {fileID: 64269599694594116, guid: a584b1482246b2642a3d5a6225787d96, type: 2}
     - {fileID: 64742541191506388, guid: a584b1482246b2642a3d5a6225787d96, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: a584b1482246b2642a3d5a6225787d96, type: 2}
+=======
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817951662638092, guid: 65c8dc5eda096f549930286a82510a30, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817951662638092, guid: 65c8dc5eda096f549930286a82510a30, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817951662638092, guid: 65c8dc5eda096f549930286a82510a30, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817951662638092, guid: 65c8dc5eda096f549930286a82510a30, type: 2}
+      propertyPath: m_LocalScale.z
+<<<<<<< HEAD
+      value: 200
+=======
+      value: 150
+>>>>>>> master
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817951662638092, guid: 65c8dc5eda096f549930286a82510a30, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966749555958098, guid: 65c8dc5eda096f549930286a82510a30, type: 2}
+      propertyPath: m_Name
+      value: PlayerShip
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 65c8dc5eda096f549930286a82510a30, type: 2}
+>>>>>>> 60c5a05be28cfb2751c46fed12693640c46bb7d6:Assets/Scenes/GameScene.unity
   m_IsPrefabAsset: 0
 --- !u!1 &1840354530
 GameObject:
