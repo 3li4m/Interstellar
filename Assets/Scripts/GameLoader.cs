@@ -2,20 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class LevelLoader : MonoBehaviour {
+public class GameLoader : MonoBehaviour {
 
-	Scene scene;
-
+	// Use this for initialization
 	void Start () {
-		scene = SceneManager.GetActiveScene();
-	}
-	public void Restart()
-	{
 		
-		SceneManager.LoadScene (scene.name);
 	}
+	
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	public void StartGame(){
+		SceneManager.LoadScene ("Map1");
 	}
 }

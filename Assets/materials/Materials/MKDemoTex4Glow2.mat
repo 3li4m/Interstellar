@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: MKDemoTex4Glow2
+  m_Shader: {fileID: 4800000, guid: d4e6e52fc557f724b8eb87be17128684, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Diffuse:
+        m_Texture: {fileID: 2800000, guid: b054eb9f5cfea54449ef72f4513e28c3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 4.96, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 2800000, guid: b7c3b76014ea29542a5d25b7f09e5bd5, type: 3}
+        m_Scale: {x: 10, y: 10}
+        m_Offset: {x: 0, y: 16.46}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: b7c3b76014ea29542a5d25b7f09e5bd5, type: 3}
+        m_Scale: {x: 20, y: 20}
+        m_Offset: {x: 0, y: 0}
+    - _MainTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Noise:
+        m_Texture: {fileID: 2800000, guid: 98ecaba540f29e046ace972498b3e7b0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal:
+        m_Texture: {fileID: 2800000, guid: b7c3b76014ea29542a5d25b7f09e5bd5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 3.85, y: 2.56}
+    - _Ramp:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Cutoff: 0.5
+    - _DissolveAmount: 0
+    - _EmissionAmount: 4
+    - _FresnelIntensity: 1.5
+    - _FresnelPower: 1
+    - _FresnelValue: 1
+    - _Glossiness: 1
+    - _InvFade: 2.04
+    - _Metallic: 0
+    m_Colors:
+    - _Albedo: {r: 1, g: 0, b: 0, a: 1}
+    - _Color: {r: 1, g: 0, b: 0, a: 1}
+    - _EmissionColor: {r: 0.4112577, g: 0.007352948, b: 1, a: 1}
+    - _TintColor: {r: 0.122641504, g: 0.08388216, b: 0.08388216, a: 0.5}

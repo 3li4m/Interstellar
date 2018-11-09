@@ -36,7 +36,7 @@ public class Special : MonoBehaviour {
 	}
 	
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.E)) {
+		if (Input.GetKeyDown (KeyCode.E) && !player.gameObject.GetComponent<Movement>().dead) {
 			if (ui.GetComponent<UI> ().sliderVal >= 100) {
 				cdTxt.SetActive (true);
 				cooldown = true;
@@ -74,7 +74,7 @@ public class Special : MonoBehaviour {
 	{
 		player.gameObject.GetComponent<Movement> ().movementSpeed = 0f;
 		pGraphics.GetComponent<Renderer>().enabled = false;
-
+		player.gameObject.GetComponent<Movement> ().canFire = false;
 		Instantiate (teleportParticle, this.gameObject.transform.position, teleportParticle.transform.rotation);
 		this.gameObject.transform.position = new Vector3(Random.Range(-45,45), 0 ,Random.Range(45,-20));
 	}
@@ -88,7 +88,9 @@ public class Special : MonoBehaviour {
 		Instantiate (shockWaveParticle, this.gameObject.transform.position, shockWaveParticle.transform.rotation);
 		cam.GetComponent<CamShake>().shouldShake = true;
 		pGraphics.GetComponent<Renderer>().enabled = true;
+		player.gameObject.GetComponent<Movement> ().canFire = true;
 	}
+
 	void reEnableMove()
 	{
 		player.gameObject.GetComponent<Movement> ().movementSpeed = speed;

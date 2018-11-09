@@ -9,6 +9,8 @@ TagManager:
   - shockWave
   - ScreenCanvas
   - AudioManager
+  - Manager
+  - SongAudio
   layers:
   - Default
   - TransparentFX
