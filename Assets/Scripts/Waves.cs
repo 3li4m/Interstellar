@@ -10,6 +10,9 @@ public class Waves : MonoBehaviour {
 	Wave currentWave;
 	int currentWaveNumber;
 
+	public float waveTime;
+	float waveCountdown;
+
 	int enemiesRemainingAlive;
 	int enemiesRemaningToSpawn;
 	float nextSpawnTime;
@@ -26,26 +29,35 @@ public class Waves : MonoBehaviour {
 		// get wave ui
 		ui = GameObject.FindGameObjectWithTag ("ScreenCanvas");
 		player = GameObject.FindGameObjectWithTag ("Player");
-		NextWave ();
+		waveCountdown = waveTime;
+		Invoke ("NextWave", waveCountdown);
 	}
 
 	void Update () {
 		if (player.GetComponent<Movement>().dead) {
 			spawnWave = false;
 		}
+		ui.GetComponent<UI> ().waveTime = waveCountdown;
 		Vector3 spawnPoint = checkDist (spawnDist);
-		if (spawnWave != false) {
-			if (enemiesRemaningToSpawn > 0 && Time.time > nextSpawnTime) {
+		if (waveCountdown <= 0) {
+			if (spawnWave != false) {
+				if (enemiesRemaningToSpawn > 0 && Time.time > nextSpawnTime) {
 	
-				enemiesRemaningToSpawn --;
+					enemiesRemaningToSpawn--;
 
-				nextSpawnTime = Time.time + currentWave.timeBetweenSpawns;
+					nextSpawnTime = Time.time + currentWave.timeBetweenSpawns;
 
-				Enemy spawnedEnemy = Instantiate(enemy, checkDist (spawnDist), Quaternion.identity) as Enemy;
-				spawnedEnemy.OnDeath += OnEnemyDeath;
+					Enemy spawnedEnemy = Instantiate (enemy, checkDist (spawnDist), Quaternion.identity) as Enemy;
+					spawnedEnemy.OnDeath += OnEnemyDeath;
+				}
 			}
+		} else {
+			waveCountdown -= Time.deltaTime;
 		}
 
+		if (waveCountdown < 0) {
+			waveCountdown = 0;
+		}
 	}
 
 	Vector3 checkDist(float spawnDist)
@@ -68,7 +80,10 @@ public class Waves : MonoBehaviour {
 		print ("Enemy Died");
 		enemiesRemainingAlive--;
 		if (enemiesRemainingAlive == 0) {
-			NextWave ();
+			if (waveCountdown <= 0) {
+				waveCountdown = waveTime;
+				NextWave ();
+			}
 		}
 	}
 

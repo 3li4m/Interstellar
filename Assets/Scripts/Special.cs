@@ -66,7 +66,7 @@ public class Special : MonoBehaviour {
 			cooldown = false;
 			cdTxt.SetActive (false);
 			ui.GetComponent<UI> ().sliderVal += valOverTime * Time.deltaTime;
-		}
+		} 
 
 
 	}

@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 114099107292370838}
   - component: {fileID: 114364798332321450}
   - component: {fileID: 54776914863704074}
+  - component: {fileID: 114059481785943838}
   m_Layer: 0
   m_Name: Snake
   m_TagString: Enemy
@@ -195,6 +196,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114059481785943838
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1412904459982824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4619350eabe8add45b58ea77ff4be9f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 15
+  stoppingDist: 0
+  retreatDist: 0
+  Player: {fileID: 0}
+  dodge: 0
+  dodgeSpeed: 0
 --- !u!114 &114099107292370838
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -212,14 +230,14 @@ MonoBehaviour:
   specialVal: 0.1
   shatterdObject: {fileID: 1276462070355198, guid: 0914bfa87c9c38742aeb286ea3e51084,
     type: 2}
+  doTheShake: 0
   shake: {fileID: 0}
   ui: {fileID: 0}
-  projectile: {fileID: 114008897390832786, guid: 5f6a7a9bb55ebaf4398879b53c352fe1,
-    type: 2}
-  speed: 10
-  stoppingDist: 0
-  retreatDist: 4
-  Player: {fileID: 0}
+  objects:
+  - {fileID: 114008897390832786, guid: 5f6a7a9bb55ebaf4398879b53c352fe1, type: 2}
+  - {fileID: 114061105029482542, guid: 2d5824a6c3534e74a8b07a0578b1a06a, type: 2}
+  dodge: 0
+  dodgeSpeed: 0
 --- !u!114 &114364798332321450
 MonoBehaviour:
   m_ObjectHideFlags: 1

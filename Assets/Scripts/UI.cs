@@ -5,27 +5,38 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class UI : MonoBehaviour 
 {
+	[Header("Score")]
 	public int score;
 	public int wave;
 	public Text scoreTxt;
 	public Text waveTxt;
 
+	[Header("PowerBar")]
 	public float sliderVal;
 	public Slider slider;
 
 	public Text cdTxt;
 
+	[Header("Gameover")]
 	public Text gameOverTxt;
 	public GameObject gameOverPannel;
 	public bool gameOver;
 
 	public GameObject UireadyParticle;
 
+	[Header("Audio")]
 	public GameObject songAudio;
 	public Text songAudioTxt;
 
+	[Header("SpawnTime")]
+	public GameObject waveSpawnObj;
+	public Text waveSpawnTimeTxt;
+	public float waveTime;
+
+	[Header("InGameCheck")]
 	Scene scene;
 	public bool inGame;
+
 	void Start () {
 		songAudio = GameObject.FindGameObjectWithTag ("SongAudio");
 		score = 0;
@@ -37,6 +48,7 @@ public class UI : MonoBehaviour
 		if (scene.name != "MainMenu") {
 			scoreTxt.text = "" + score.ToString ();
 			waveTxt.text = "" + wave.ToString ();
+			waveSpawnTimeTxt.text = "" + Mathf.RoundToInt(waveTime).ToString ();
 			slider.value = sliderVal;
 			cdTxt.text = "COOLING DOWN";
 			if (slider.value == 100) {

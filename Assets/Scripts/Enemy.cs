@@ -4,43 +4,46 @@ using UnityEngine;
 public class Enemy : LivingEntity 
 {
 
-	public bullet projectile;
+	public DealDamage[] objects;
 
-	public float speed;
-	public float stoppingDist;
-	public float retreatDist;
+	[Header("Dodge Controls")]
+	public bool dodge;
+	public int dodgeSpeed;
 
-	public Transform Player;
-
-
-	void Start () {
-		Player = GameObject.FindGameObjectWithTag ("Player").transform;
-	}
 
 	public void OnTriggerEnter(Collider other)
 	{
-		if (other.tag == "projectile") {
-			TakeHit (projectile.dmg);
-			Destroy (other.gameObject);
+		if (other.gameObject.tag == "projectile" || other.gameObject.tag == "Laser") {
+			for (int i = 0; i < objects.Length; i++) {
+				TakeHit (objects[0].dmg);
+			}
+			if (other.gameObject.tag == "projectile") {
+				Destroy (other.gameObject);
+			}
 		}
-		if (other.tag == "shockWave") {
+		if (other.gameObject.tag == "shockWave") {
 			Die ();
 		}
 	}
-
+	/*
 	void FixedUpdate()
 	{
 		if (Player == null) {
 			return;
 		}
-		if (!Player.gameObject.GetComponent<Movement> ().dead) {
-			if (Vector3.Distance (transform.position, Player.position) > stoppingDist) {
-				transform.position = Vector3.MoveTowards (transform.position, Player.position, speed * Time.deltaTime);
-			} else if (Vector3.Distance (transform.position, Player.position) < stoppingDist && Vector3.Distance (transform.position, Player.position) > retreatDist) {
-				transform.position = this.transform.position;
-			} else if (Vector3.Distance (transform.position, Player.position) < retreatDist) {
-				transform.position = Vector3.MoveTowards (transform.position, Player.position, -speed * Time.deltaTime);
+		if (!dodge) {
+			if (!Player.gameObject.GetComponent<Movement> ().dead) {
+				if (Vector3.Distance (transform.position, Player.position) > stoppingDist) {
+					transform.position = Vector3.MoveTowards (transform.position, Player.position, speed * Time.deltaTime);
+				} else if (Vector3.Distance (transform.position, Player.position) < stoppingDist && Vector3.Distance (transform.position, Player.position) > retreatDist) {
+					transform.position = this.transform.position;
+				} else if (Vector3.Distance (transform.position, Player.position) < retreatDist) {
+					transform.position = Vector3.MoveTowards (transform.position, Player.position, -speed * Time.deltaTime);
+				}
 			}
+		} else {
+			transform.Translate(Vector3.left * dodgeSpeed);
+			dodge = false;
 		}
-	}
+	}*/
 }

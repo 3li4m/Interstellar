@@ -15,8 +15,7 @@ public class Movement : LivingEntity
 
 	[Header("WeaponControl")]
 	//temp for now put in own script
-	public Transform[] projectileSpawn;
-	public GameObject projectile;
+	public Gun gun;
 	public float timeBetweenShots;
 	public float shotCounter;
 	public bool isFiring;
@@ -44,6 +43,7 @@ public class Movement : LivingEntity
 	
 	void Update()
 	{
+		gun = gameObject.GetComponentInChildren<Gun>();
 		if (controlable) {
 			//NEED TO CHANGE WHEN MORE GUNS ARE ADDED MAKE SCRIPT FOR THEM
 			if (Input.GetButton ("Fire1") && canFire == true) {			
@@ -52,8 +52,8 @@ public class Movement : LivingEntity
 					shotCounter -= Time.deltaTime;
 					if (shotCounter <= 0) {
 						shotCounter = timeBetweenShots;
-						for (int i = 0; i < projectileSpawn.Length; i++) {
-							Instantiate (projectile, projectileSpawn [i].position, projectileSpawn [i].rotation);
+						for (int i = 0; i < gun.projectileSpawn.Length; i++) {
+							Instantiate (gun.projectile, gun.projectileSpawn[i].position, gun.projectileSpawn [i].rotation);
 							//in future make it look for the gun name and swap to coresponding audio source
 							audioS.Play();
 						}
