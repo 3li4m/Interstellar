@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿/*
+ * Player Controls
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

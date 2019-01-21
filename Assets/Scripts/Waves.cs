@@ -46,7 +46,7 @@ public class Waves : MonoBehaviour {
 					enemiesRemaningToSpawn--;
 
 					nextSpawnTime = Time.time + currentWave.timeBetweenSpawns;
-
+	
 					Enemy spawnedEnemy = Instantiate (enemy, checkDist (spawnDist), Quaternion.identity) as Enemy;
 					spawnedEnemy.OnDeath += OnEnemyDeath;
 				}
@@ -91,7 +91,6 @@ public class Waves : MonoBehaviour {
 		currentWaveNumber++;
 		if (currentWaveNumber - 1 < waves.Length) {
 			currentWave = waves [currentWaveNumber - 1];
-
 
 			ui.GetComponent<UI> ().wave += 1;
 

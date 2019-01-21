@@ -20,7 +20,6 @@ public class BoundaryLighting : MonoBehaviour {
 		if (other.gameObject.tag == "Player") {
 			collided = true;
 		}
-		//	gameObject.GetComponent<ParticleSystemRenderer> ().material.color = Color.black;
 	}
 
 	void OnTriggerExit(Collider other)

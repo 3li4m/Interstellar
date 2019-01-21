@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿/*
+ * all living objects will derive from this class
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

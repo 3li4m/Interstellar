@@ -4,7 +4,7 @@ using UnityEngine;
 public class Enemy : LivingEntity 
 {
 
-	public DealDamage[] objects;
+	public DealDamage[] weapons;
 
 	[Header("Dodge Controls")]
 	public bool dodge;
@@ -13,16 +13,22 @@ public class Enemy : LivingEntity
 
 	public void OnTriggerEnter(Collider other)
 	{
-		if (other.gameObject.tag == "projectile" || other.gameObject.tag == "Laser") {
-			for (int i = 0; i < objects.Length; i++) {
-				TakeHit (objects[0].dmg);
-			}
-			if (other.gameObject.tag == "projectile") {
-				Destroy (other.gameObject);
-			}
+		if (other.gameObject.tag == "projectile") 
+		{
+			TakeHit (weapons[0].dmg);
+			Destroy (other.gameObject);
 		}
-		if (other.gameObject.tag == "shockWave") {
+		if (other.gameObject.tag == "shockWave") 
+		{
 			Die ();
+		}
+	}
+
+	public void OnTriggerStay(Collider other)
+	{
+		if (other.gameObject.tag == "Laser") 
+		{
+			TakeHit (weapons[1].dmg);
 		}
 	}
 	/*

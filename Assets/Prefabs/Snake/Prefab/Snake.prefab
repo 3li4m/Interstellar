@@ -38,9 +38,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4728703077825492}
   - component: {fileID: 95429294791298472}
+  - component: {fileID: 54776914863704074}
   - component: {fileID: 114099107292370838}
   - component: {fileID: 114364798332321450}
-  - component: {fileID: 54776914863704074}
   - component: {fileID: 114059481785943838}
   m_Layer: 0
   m_Name: Snake
@@ -159,7 +159,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 4
@@ -224,8 +224,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd295f71d69d1de4f89d0fa553301d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHp: 100
-  health: 100
+  startingHp: 1
+  health: 1
   value: 10
   specialVal: 0.1
   shatterdObject: {fileID: 1276462070355198, guid: 0914bfa87c9c38742aeb286ea3e51084,
@@ -233,7 +233,7 @@ MonoBehaviour:
   doTheShake: 0
   shake: {fileID: 0}
   ui: {fileID: 0}
-  objects:
+  weapons:
   - {fileID: 114008897390832786, guid: 5f6a7a9bb55ebaf4398879b53c352fe1, type: 2}
   - {fileID: 114061105029482542, guid: 2d5824a6c3534e74a8b07a0578b1a06a, type: 2}
   dodge: 0

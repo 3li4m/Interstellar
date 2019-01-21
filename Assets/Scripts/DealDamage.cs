@@ -6,10 +6,16 @@ public class DealDamage : MonoBehaviour
 {
 	public float velocity;
 	Rigidbody rb;
-	public int dmg;
+	public float dmg;
 	public bool laserSpecial;
 	public GameObject[] randWep;
+	public ParticleSystem[] emitter;
+
+	public float laserSpecialTimer;
+	int rand;
+
 	void Start () {
+		rand = Random.Range (0, randWep.Length);
 		rb = GetComponent<Rigidbody> ();
 	}
 	
@@ -20,13 +26,17 @@ public class DealDamage : MonoBehaviour
 		if (!laserSpecial) {
 			Destroy (this.gameObject, 4f);
 		} else {
-			Invoke ("destroyLaser", 20f);
+			Invoke ("fadeOut", laserSpecialTimer);
 		}
 	}
-
-	void destroyLaser()
+	//turns off emitters
+	void fadeOut()
 	{
-		randWep [Random.Range (0, randWep.Length)].SetActive (true);
-		Destroy (this.gameObject);
+		
+		print (rand);
+		randWep [rand].SetActive (true);
+		Destroy (gameObject, .5f);
+		//this.gameObject.SetActive (false);
 	}
+
 }

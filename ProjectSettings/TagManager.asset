@@ -15,6 +15,7 @@ TagManager:
   - Wall
   - gun
   - Laser
+  - BossEnemy
   layers:
   - Default
   - TransparentFX
