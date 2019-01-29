@@ -19,11 +19,14 @@ public class Respawn : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (died.dead && lives > 0) {
+		if (died.dead && lives > 0) 
+		{
 			Invoke ("respawn", 2f);
 			died.canDie = false;	
 			playerControls.gameObject.transform.position = Vector3.Lerp(transform.position,new Vector3 (0, 0, 0),1f);
-		} else if(died.dead && lives <= 0) {
+		} 
+		else if(died.dead && lives <= 0) 
+		{
 			died.canDie = false;	
 			playerControls.gameObject.transform.position = Vector3.Lerp(transform.position,new Vector3 (0, 0, 0),1f);
 			gameOver.gameOver = true;
@@ -41,7 +44,8 @@ public class Respawn : MonoBehaviour {
 		Invoke ("killable", 4f);
 	}
 
-	void killable(){
+	void killable()
+	{
 		died.canDie = true;	
 	}
 }

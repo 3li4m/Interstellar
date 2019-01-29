@@ -14,7 +14,32 @@ ModelImporter:
     3300000: //RootNode
     4300000: Plane
     2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base
+    second: {fileID: 2100000, guid: b04d3cc1fbad6fd46aca1951b0d606a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Decals
+    second: {fileID: 2100000, guid: 6de5568ae43ac9c42b086f109fc9f812, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Thrusters
+    second: {fileID: 2100000, guid: 1a8b6cf1b7058a34b8b05398a70b1b41, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vents
+    second: {fileID: 2100000, guid: a613aac4f8f3cf048b8e93ba38f85421, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Windows
+    second: {fileID: 2100000, guid: d42a037b1ac43574fad076d07d8f3ff1, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

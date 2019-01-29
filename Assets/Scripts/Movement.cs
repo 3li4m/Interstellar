@@ -78,7 +78,6 @@ public class Movement : LivingEntity
 
 			Vector3 movement = new Vector3 (turn, 0, move);
 			rb.velocity = movement * movementSpeed;
-			rb.rotation = Quaternion.Euler (Vector3.forward * turn * tilt);
 
 			Ray ray = viewCam.ScreenPointToRay (Input.mousePosition);
 			Plane groundPlane = new Plane (Vector3.up, Vector3.zero);

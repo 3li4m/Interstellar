@@ -7,6 +7,7 @@ public class BoundaryLighting : MonoBehaviour {
 	public Renderer ren;
 	public float colorSpeed;
 	public bool collided;
+
 	void Start()
 	{
 		collided = false;
