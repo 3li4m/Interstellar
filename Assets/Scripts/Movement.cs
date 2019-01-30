@@ -34,6 +34,8 @@ public class Movement : LivingEntity
 	public GameObject targetObj;
 	public Camera viewCam;
 
+	public Laser laser;
+
 	void Start () 
 	{
 		dead = false;
@@ -43,6 +45,7 @@ public class Movement : LivingEntity
 		rb = transform.GetComponentInChildren<Rigidbody> ();
 		myT = transform;
 		audioS = gameObject.GetComponentInChildren<AudioSource> ();
+	
 	}
 	
 	void Update()
@@ -50,21 +53,26 @@ public class Movement : LivingEntity
 		gun = gameObject.GetComponentInChildren<Gun>();
 		if (controlable) {
 			//NEED TO CHANGE WHEN MORE GUNS ARE ADDED MAKE SCRIPT FOR THEM
-			if (Input.GetButton ("Fire1") && canFire == true) {			
-				isFiring = true;
-				if (isFiring) {
-					shotCounter -= Time.deltaTime;
-					if (shotCounter <= 0) {
-						shotCounter = timeBetweenShots;
-						for (int i = 0; i < gun.projectileSpawn.Length; i++) {
-							Instantiate (gun.projectile, gun.projectileSpawn[i].position, gun.projectileSpawn [i].rotation);
-							//in future make it look for the gun name and swap to coresponding audio source
-							audioS.Play();
-						}
-					}	
+			if (laser.activeLaser == false) {
+				if (Input.GetButton ("Fire1") && canFire == true) {			
+					isFiring = true;
+					if (isFiring) {
+						shotCounter -= Time.deltaTime;
+						if (shotCounter <= 0) {
+							shotCounter = timeBetweenShots;
+							for (int i = 0; i < gun.projectileSpawn.Length; i++) {
+								Instantiate (gun.projectile, gun.projectileSpawn[i].position, gun.projectileSpawn [i].rotation);
+								//in future make it look for the gun name and swap to coresponding audio source
+								audioS.Play();
+							}
+						}	
+					}
+				} else {
+					shotCounter = 0;
 				}
-			} else {
-				shotCounter = 0;
+			}
+			else{
+				return;
 			}
 		}
 	}

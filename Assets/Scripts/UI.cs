@@ -39,9 +39,6 @@ public class UI : MonoBehaviour
 	Scene scene;
 	public bool inGame;
 
-	[Header("Casete")]
-	public GameObject casete;
-	public SongController isPlaying;
 
 	void Start () 
 	{
@@ -51,7 +48,6 @@ public class UI : MonoBehaviour
 		score = 0;
 		sliderVal = 0;
 		scene = SceneManager.GetActiveScene ();
-		displayCasete ();
 	}
 	
 	void Update () 
@@ -76,7 +72,6 @@ public class UI : MonoBehaviour
 			}
 		}
 		songAudioTxt.text = "Now Playing " + songAudio.GetComponent<AudioSource>().clip.name;
-		displayCasete ();
 		removeLife ();
 	}
 
@@ -98,20 +93,6 @@ public class UI : MonoBehaviour
 		}
 	}
 
-	// Casete display
-	void displayCasete()
-	{
-		if (isPlaying.playing == false) {
-			Invoke ("display", 0f);
-		}
-	}
-	void display()
-	{
-		casete.SetActive (true);
-		Invoke ("unDisplay", 20f);
-	}
-	void unDisplay(){
-		casete.SetActive (false);
-	}
+
 
 }

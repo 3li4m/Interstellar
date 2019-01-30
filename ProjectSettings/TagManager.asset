@@ -16,6 +16,8 @@ TagManager:
   - gun
   - Laser
   - BossEnemy
+  - Casete
+  - weaponSounds
   layers:
   - Default
   - TransparentFX

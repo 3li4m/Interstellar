@@ -1127,6 +1127,7 @@ MonoBehaviour:
   - {fileID: 198494050777584876}
   - {fileID: 198355865856333394}
   - {fileID: 198602054091629962}
+  laserSpecialTimer: 0
 --- !u!136 &136200310178266780
 CapsuleCollider:
   m_ObjectHideFlags: 1
